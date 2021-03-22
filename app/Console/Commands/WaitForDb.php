@@ -19,7 +19,7 @@ class WaitForDb extends Command
      *
      * @var string
      */
-    protected $description = 'Wait for MySQL';
+    protected $description = 'Wait until application is able to connect to DB';
 
     /**
      * Create a new command instance.
