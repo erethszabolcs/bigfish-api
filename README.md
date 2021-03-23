@@ -25,13 +25,13 @@ docker tag erethszabolcs/bigfish-api bigfish-api
 
 ## Laravel Sail
 
-A projekt mappájában (jelen esetben /bigfish-api) a következő paranccsal egy Docker Container segítségével telepítjük a projekthez szükséges Composer csomagokat, köztük a Laravel Sail-t is.
+A projekt mappájában (jelen esetben /bigfish-api) a következő paranccsal egy Docker Container segítségével telepítsük a projekthez szükséges Composer csomagokat, köztük a Laravel Sail-t is.
 
 ```bash
 docker run --rm -v $(pwd):/opt -w /opt laravelsail/php80-composer:latest composer install
 ```
 
-Ezután már futtathatjuk a következő parancsot, amely az Image alapján felépíti és elindítja a projekthez szükséges (laravel.test, mysql), általunk megadott Container-eket. 
+Ezután már futtathatjuk a következő parancsot, amely az Image alapján felépíti és elindítja a projekthez szükséges (**laravel.test**, **mysql**), általunk megadott Container-eket. 
 
 ```bash
 ./vendor/bin/sail up -d laravel.test mysql
