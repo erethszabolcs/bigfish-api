@@ -124,10 +124,10 @@ class UserTest extends TestCase
         User::factory()->count(User::$per_page * 2)->create();
 
         foreach(User::$required as $orderby) {
-            foreach(['asc', 'desc'] as $direction) {
-                $order = User::orderBy($orderby, $direction)->paginate(User::$per_page)->pluck('id')->toArray();
+            foreach(['asc', 'desc'] as $sort) {
+                $order = User::orderBy($orderby, $sort)->paginate(User::$per_page)->pluck('id')->toArray();
 
-                $response = $this->json('GET', '/api/v1/users?order_by=' . $orderby . '&direction=' . $direction, [], $this->headers);
+                $response = $this->json('GET', '/api/v1/users?order_by=' . $orderby . '&sort=' . $sort, [], $this->headers);
 
                 $resp_ids = array_column(json_decode($response->getContent())->data, 'id');
 

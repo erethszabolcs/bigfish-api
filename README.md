@@ -46,7 +46,7 @@ A Container-ek elindulásával lefut adatbázis migráció és seed is, így gen
 ```php
 // Get all Users with optional page selection and optional ordering
 GET: /api/v1/users
-GET: /api/v1/users?page=2&order_by=name&direction=desc
+GET: /api/v1/users?page=2&order_by=name&sort=desc
 
 // Create User
 POST: /api/v1/users
