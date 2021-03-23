@@ -37,7 +37,7 @@ Ezután már futtathatjuk a következő parancsot, amely az Image alapján felé
 ./vendor/bin/sail up -d laravel.test mysql
 ```
 
-A várhatóan futó Container-ek alapesetben a következő lokális portokon fognak működni: 80 (Laravel), 3306 (MySQL), 6379 (Redis). Így fontos, hogy ezek a portok ne legyenek foglalva más Container-ek vagy lokális szerverek által. Alternatív megoldásként a .env fájlban környezeti változóként megadhatjuk, ha ezen Container-eknek szeretnénk más lokális portokat dedikálni (APP_PORT, FORWARD_DB_PORT, FORWARD_REDIS_PORT).
+A várhatóan futó Container-ek alapesetben a következő lokális portokon fognak működni: **80** (Laravel), **3306** (MySQL), **6379** (Redis). Így fontos, hogy ezek a portok ne legyenek foglalva más Container-ek vagy lokális szerverek által. Alternatív megoldásként a .env fájlban környezeti változóként megadhatjuk, ha ezen Container-eknek szeretnénk más lokális portokat dedikálni (*APP_PORT*, *FORWARD_DB_PORT*, *FORWARD_REDIS_PORT*).
 
 A Container-ek elindulásával lefut adatbázis migráció és seed is, így generált adatokkal egyből kipróbálható az API.
 
