@@ -41,6 +41,29 @@ A várhatóan futó Container-ek alapesetben a következő lokális portokon fog
 
 A Container-ek elindulásával lefut adatbázis migráció és seed is, így generált adatokkal egyből kipróbálható az API.
 
+## Végpontok
+
+```php
+// Get all Users with optional page selection and optional ordering
+GET: /api/v1/users
+GET: /api/v1/users?page=2&order_by=name&direction=desc
+
+// Create User
+POST: /api/v1/users
+
+// Get specific User (if it exists according to the given id)
+GET: /api/v1/users/1
+
+// Update User (if it exists according to the given id)
+PUT: /api/v1/users/1
+
+// Delete User (if it exists according to the given id)
+DELETE: /api/v1/users/1
+
+// Fallback endpoint to handle wrong URLs
+GET: /api/{fallbackPlaceholder}
+```
+
 ## Tesztek
 
 A következő paranccsal futtathatjuk az éppen futó alkalmazás mappájában a teszteket:
