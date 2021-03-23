@@ -19,8 +19,8 @@ class UserController extends Controller
     {   
         $users = User::query();
 
-        if(in_array($orderby = $request->get('order_by'), User::$required) && in_array($direction = $request->get('direction'), ['asc', 'desc'])) {
-            $users = $users->orderBy($orderby, $direction);
+        if(in_array($orderby = $request->get('order_by'), User::$required) && in_array($sort = $request->get('sort'), ['asc', 'desc'])) {
+            $users = $users->orderBy($orderby, $sort);
         }
 
         return UserResource::collection($users->paginate(User::$per_page));
